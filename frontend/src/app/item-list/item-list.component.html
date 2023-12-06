@@ -1,0 +1,30 @@
+<!-- item-list.component.html -->
+
+<div class="container mt-4">
+  <div class="d-flex justify-content-between mb-3">
+    <h4>Item List</h4>
+    <button class="btn btn-success" (click)="createItem()" data-cy=add-item>Create</button>
+  </div>
+  
+  <table class="table table table-dark mt-3">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th class="text-center">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of items; let i = index">
+        <td>{{i + 1 }}</td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.description }}</td>
+        <td class="text-center">
+          <a [routerLink]="['/edit', item.id]" class="btn btn-primary btn-sm mx-2 " data-cy=edit-button>Edit</a>
+          <button class="btn btn-danger btn-sm ml-4" (click)="deleteItem(item.id)" data-cy=delete-button>Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

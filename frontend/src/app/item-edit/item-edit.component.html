@@ -1,0 +1,20 @@
+<!-- item-edit.component.html -->
+
+<div class="container mt-4">
+  <h4>Edit Item</h4>
+  
+  <form (submit)="updateItem()">
+    <div class="mb-3">
+      <label for="editItemName" class="form-label">Name</label>
+      <input type="text" class="form-control" id="editItemName" data-cy=item-name [(ngModel)]="editedItemName" name="editedItemName" required>
+    </div>
+    
+    <div class="mb-3">
+      <label for="editItemDescription" class="form-label">Description</label>
+      <textarea class="form-control" id="editItemDescription" [(ngModel)]="editedItemDescription" data-cy="item-des" name="editedItemDescription" required></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-success mx-2" data-cy=save-button>Update</button>
+    <button type="button" class="btn btn-secondary" (click)="goBack()">Back</button>
+  </form>
+</div>
