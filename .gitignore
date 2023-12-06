@@ -40,3 +40,9 @@ out/
 Thumbs.db
 Desktop.ini
 $RECYCLE.BIN/
+
+# Exclude backend/dist
+backend/dist/
+
+# Include other files in backend/
+backend/*
